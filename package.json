@@ -1,6 +1,6 @@
 {
   "name": "jscryptor",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Javascript implementation of RNCryptor",
   "main": "index.js",
   "scripts": {

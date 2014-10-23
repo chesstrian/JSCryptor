@@ -1,0 +1,28 @@
+{
+  "name": "JSCryptor",
+  "version": "0.0.0",
+  "description": "Javascript implementation of RNCryptor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "mcrypt": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chesstrian/JSCryptor.git"
+  },
+  "keywords": [
+    "rncryptor"
+  ],
+  "author": {
+    "name": "Christian Gutierrez",
+    "email": "chesstrian@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chesstrian/JSCryptor/issues"
+  },
+  "homepage": "https://github.com/chesstrian/JSCryptor"
+}

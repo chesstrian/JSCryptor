@@ -1,4 +1,4 @@
-.idea/
-node_modules/
+.idea
+node_modules
 npm-debug.log
 v8.log

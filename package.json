@@ -1,17 +1,17 @@
 {
   "name": "jscryptor",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Javascript implementation of RNCryptor",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
   },
   "dependencies": {
-    "mcrypt": "0.0.7"
+    "mcrypt": "0.0.15"
   },
   "devDependencies": {
-    "chai": "1.x",
-    "mocha": "2.x"
+    "chai": "^3.2.0",
+    "mocha": "^2.2.5"
   },
   "repository": {
     "type": "git",

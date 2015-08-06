@@ -38,25 +38,25 @@ console.log("Result:", decrypted);
 Object exposed by `require('jscryptor')`;
 
 ### RNCryptor.Encrypt
-* **plain_text**: *String* or *Buffer*
-* **password**: *String* or *Buffer*
-* **version**: *Number* (3 by default, not mandatory)
+* plain_text: *String* or *Buffer*
+* password: *String* or *Buffer*
+* version: *Number* (3 by default, not mandatory)
 
 ### RNCryptor.Decrypt
-* **b64_str**: *String* or *Buffer*
-* **password**: *String* or *Buffer*
+* b64_str: *String* or *Buffer*
+* password: *String* or *Buffer*
 
 ### RNCryptor.EncryptWithArbitrarySalts
-* **plain_text**: *String* or *Buffer*
-* **password**: *String* or *Buffer*
-* **encryption_salt**: *String* or *Buffer*
-* **hmac_salt**: *String* or *Buffer*
-* **iv**: *String* or *Buffer*
-* **version**: *Number* (3 by default, not mandatory)
+* plain_text: *String* or *Buffer*
+* password: *String* or *Buffer*
+* encryption_salt: *String* or *Buffer*
+* hmac_salt: *String* or *Buffer*
+* iv: *String* or *Buffer*
+* version: *Number* (3 by default, not mandatory)
 
 ### RNCryptor.EncryptWithArbitraryKeys
-* **plain_text**: *String* or *Buffer*
-* **encryption_key**: *String* or *Buffer*
-* **hmac_key**: *String* or *Buffer*
-* **iv**: *String* or *Buffer*
-* **version**: *Number* (3 by default, not mandatory)
+* plain_text: *String* or *Buffer*
+* encryption_key: *String* or *Buffer*
+* hmac_key: *String* or *Buffer*
+* iv: *String* or *Buffer*
+* version: *Number* (3 by default, not mandatory)

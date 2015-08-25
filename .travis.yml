@@ -1,4 +1,10 @@
+sudo: false
 language: node_js
+addons:
+  apt_packages:
+    - libmcrypt4
+    - libmcrypt-dev
 node_js:
   - "0.10"
-before_install: sudo apt-get install libmcrypt4 libmcrypt-dev
+  - "0.12"
+  - "iojs-v2.5.0"

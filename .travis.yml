@@ -1,10 +1,21 @@
-sudo: false
+sudo: true
 language: node_js
+
+# node v3+ requires C++11-compatible compiler. See https://docs.travis-ci.com/user/languages/javascript-with-nodejs#Node.js-v4-(or-io.js-v3)-compiler-requirements
+env:
+  - CXX=g++-4.8
 addons:
-  apt_packages:
-    - libmcrypt4
-    - libmcrypt-dev
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-4.8
+      - libmcrypt4
+      - libmcrypt-dev
+
 node_js:
   - "0.10"
   - "0.12"
   - "iojs-v2.5.0"
+  - "3"
+  - "4"

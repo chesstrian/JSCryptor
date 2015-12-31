@@ -7,6 +7,8 @@
 This implementation try to be compatible with Rob Napier's Objective-C implementation of RNCryptor, It supports schema version 3.
 This code is based on the [PHP implementation of RNCryptor](https://github.com/RNCryptor/RNCryptor-php).
 
+Now a Buffer is returned, use `.toString()` to convert the result.
+
 ## Install
 ```bash
 sudo apt-get install libmcrypt4 libmcrypt-dev
@@ -30,7 +32,27 @@ var RNCryptor = require('jscryptor');
 console.time('Decrypting example');
 var decrypted = RNCryptor.Decrypt(b64string, password);
 console.timeEnd('Decrypting example');
-console.log("Result:", decrypted);
+console.log("Result:", decrypted.toString());
+```
+
+### A very good example, provided by @enricodeleo
+```js
+var fs = require('fs');
+var RNCryptor = require('jscryptor');
+
+var password = 'myPassword';
+
+var img = fs.readFileSync('./Octocat.jpg');
+var enc = RNCryptor.Encrypt(img, password);
+
+// Save encrypted image to a file, for sending to anywhere
+fs.writeFileSync('./Octocat.enc', enc);
+
+// Now, to decrypt the image:
+var b64 = new Buffer(fs.readFileSync('./Octocat.enc').toString(), 'base64');
+var dec = RNCryptor.Decrypt(b64, password);
+
+fs.writeFileSync('./Octocat2.jpg', dec);  // Image should open.
 ```
 
 ## API

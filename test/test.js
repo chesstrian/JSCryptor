@@ -13,7 +13,7 @@
       var encrypted = RNCryptor.Encrypt(plain_text, password);
       var decrypted = RNCryptor.Decrypt(encrypted, password);
 
-      expect(plain_text).to.equal(decrypted);
+      expect(plain_text).to.equal(decrypted.toString());
     });
   });
 

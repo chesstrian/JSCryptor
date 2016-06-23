@@ -9,11 +9,16 @@ This code is based on the [PHP implementation of RNCryptor](https://github.com/R
 
 Now a Buffer is returned, use `.toString()` to convert the result.
 
-## Install
+## Install on Unix
 ```bash
 sudo apt-get install libmcrypt4 libmcrypt-dev
 npm install jscryptor
 ```
+
+## Install on Windows
+### Thanks to @jimmitaker and @black-snow for pointing this
+
+VS2015+ (Community Edition works fine) is required.
 
 ## Test
 ```bash

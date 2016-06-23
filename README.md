@@ -2,16 +2,23 @@
 
 [![Build Status](https://travis-ci.org/chesstrian/JSCryptor.svg?branch=master)](https://travis-ci.org/chesstrian/JSCryptor)
 
-*Javascript implementation of RNCryptor*
+*Javascript implementation of [RNCryptor](https://github.com/RNCryptor/RNCryptor-Spec)*
 
-This implementation try to be compatible with Rob Napier's Objective-C implementation of RNCryptor, It supports schema version 3.
+This implementation tries to be compatible with [Rob Napier's Objective-C implementation of RNCryptor](https://github.com/RNCryptor/RNCryptor), It supports schema version 3.
 This code is based on the [PHP implementation of RNCryptor](https://github.com/RNCryptor/RNCryptor-php).
 
-Now a Buffer is returned, use `.toString()` to convert the result.
+## Important Recent Changes
+Now a `Buffer` is returned, use `.toString()` to convert the result to whatever format you need.
 
-## Install on Unix
+## Install on Linux (Debian)
 ```bash
 sudo apt-get install libmcrypt4 libmcrypt-dev
+npm install jscryptor
+```
+
+## Install on Mac OS X w/ Homebrew
+```bash
+brew install libmcrypt
 npm install jscryptor
 ```
 

@@ -10,15 +10,8 @@ This code is based on the [PHP implementation of RNCryptor](https://github.com/R
 ## Important Recent Changes
 Now a `Buffer` is returned, use `.toString()` to convert the result to whatever format you need.
 
-## Install on Linux (Debian)
+## Install
 ```bash
-sudo apt-get install libmcrypt4 libmcrypt-dev
-npm install jscryptor
-```
-
-## Install on Mac OS X w/ Homebrew
-```bash
-brew install libmcrypt
 npm install jscryptor
 ```
 

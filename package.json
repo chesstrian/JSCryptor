@@ -1,14 +1,14 @@
 {
   "name": "jscryptor",
-  "version": "0.0.13",
+  "version": "0.1.0",
   "description": "Javascript implementation of RNCryptor",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
   },
   "devDependencies": {
-    "chai": "^3.5.0",
-    "mocha": "^2.5.3"
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0"
   },
   "repository": {
     "type": "git",
@@ -25,8 +25,5 @@
   "bugs": {
     "url": "https://github.com/chesstrian/JSCryptor/issues"
   },
-  "homepage": "https://github.com/chesstrian/JSCryptor",
-  "dependencies": {
-    "mcrypt": "^0.1"
-  }
+  "homepage": "https://github.com/chesstrian/JSCryptor"
 }

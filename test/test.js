@@ -24,41 +24,41 @@
 
     describe('RNCryptor: ' + key.title() + ' spec', function(key) {
       return function() {
-        if (key == 'kdf') {
+        if (key === 'kdf') {
           specs[key].forEach(function(spec) {
             it(spec.title, function() {
-              var generated_key = RNCryptor.GenerateKey(new Buffer(spec.password), new Buffer(spec.salt_hex, 'hex'));
+              var generated_key = RNCryptor.GenerateKey(Buffer.from(spec.password), Buffer.from(spec.salt_hex, 'hex'));
 
               expect(spec.key_hex).to.equal(generated_key.toString('hex'));
             });
           });
-        } else if (key == 'key') {
+        } else if (key === 'key') {
           specs[key].forEach(function(spec) {
             it(spec.title, function() {
               var cipher_text = RNCryptor.EncryptWithArbitraryKeys(
-                new Buffer(spec.plaintext_hex, 'hex'),
-                new Buffer(spec.enc_key_hex, 'hex'),
-                new Buffer(spec.hmac_key_hex, 'hex'),
-                new Buffer(spec.iv_hex, 'hex'),
+                Buffer.from(spec.plaintext_hex, 'hex'),
+                Buffer.from(spec.enc_key_hex, 'hex'),
+                Buffer.from(spec.hmac_key_hex, 'hex'),
+                Buffer.from(spec.iv_hex, 'hex'),
                 parseInt(spec.version)
               );
 
-              expect(spec.ciphertext_hex).to.equal(new Buffer(cipher_text, 'base64').toString('hex'));
+              expect(spec.ciphertext_hex).to.equal(Buffer.from(cipher_text, 'base64').toString('hex'));
             });
           });
-        } else if (key == 'password') {
+        } else if (key === 'password') {
           specs[key].forEach(function(spec) {
             it(spec.title, function() {
               var cipher_text = RNCryptor.EncryptWithArbitrarySalts(
-                new Buffer(spec.plaintext_hex, 'hex'),
-                new Buffer(spec.password),
-                new Buffer(spec.enc_salt_hex, 'hex'),
-                new Buffer(spec.hmac_salt_hex, 'hex'),
-                new Buffer(spec.iv_hex, 'hex'),
+                Buffer.from(spec.plaintext_hex, 'hex'),
+                Buffer.from(spec.password),
+                Buffer.from(spec.enc_salt_hex, 'hex'),
+                Buffer.from(spec.hmac_salt_hex, 'hex'),
+                Buffer.from(spec.iv_hex, 'hex'),
                 parseInt(spec.version)
               );
 
-              expect(spec.ciphertext_hex).to.equal(new Buffer(cipher_text, 'base64').toString('hex'));
+              expect(spec.ciphertext_hex).to.equal(Buffer.from(cipher_text, 'base64').toString('hex'));
             });
           });
         }

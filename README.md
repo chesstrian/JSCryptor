@@ -8,7 +8,9 @@ This implementation tries to be compatible with [Rob Napier's Objective-C implem
 This code is based on the [PHP implementation of RNCryptor](https://github.com/RNCryptor/RNCryptor-php).
 
 ## Important Recent Changes
-Now a `Buffer` is returned, use `.toString()` to convert the result to whatever format you need.
+* Now a `Buffer` is returned, use `.toString()` to convert the result to whatever format you need.
+* `mcrypt` library not used anymore. Thanks to @b00tsy.
+* Support dropped for Nodejs 12 and below.
 
 ## Install
 ```bash
@@ -54,7 +56,7 @@ var enc = RNCryptor.Encrypt(img, password);
 fs.writeFileSync('./Octocat.enc', enc);
 
 // Now, to decrypt the image:
-var b64 = new Buffer(fs.readFileSync('./Octocat.enc').toString(), 'base64');
+var b64 = Buffer.from(fs.readFileSync('./Octocat.enc').toString(), 'base64');
 var dec = RNCryptor.Decrypt(b64, password);
 
 fs.writeFileSync('./Octocat2.jpg', dec);  // Image should open.

@@ -10,10 +10,10 @@
 
     var file_content = fs.readFileSync(spec_dir + file);
     file_content.toString().split('\n').forEach(function(line) {
-      if(line == '' || line[0] == '#') return;
+      if(line === '' || line[0] === '#') return;
 
       var key_value = line.split(':');
-      if(key_value[0] == 'title') aux_object = {};
+      if(key_value[0] === 'title') aux_object = {};
 
       if(['key_hex', 'ciphertext_hex', 'plaintext_hex'].indexOf(key_value[0]) >= 0)
         key_value[1] = key_value[1].replace(/\s+/g, '');

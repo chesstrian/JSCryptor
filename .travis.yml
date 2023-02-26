@@ -10,8 +10,6 @@ addons:
       - ubuntu-toolchain-r-test
     packages:
       - g++-4.8
-      - libmcrypt4
-      - libmcrypt-dev
 
 node_js:
   - "0.10"
@@ -22,3 +20,7 @@ node_js:
   - "5"
   - "6"
   - "8"
+  - "10"
+  - "12"
+  - "14"
+  - "16"

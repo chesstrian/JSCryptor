@@ -1,7 +1,5 @@
 # JSCryptor
 
-[![Build Status](https://travis-ci.org/chesstrian/JSCryptor.svg?branch=master)](https://travis-ci.org/chesstrian/JSCryptor)
-
 *Javascript implementation of [RNCryptor](https://github.com/RNCryptor/RNCryptor-Spec)*
 
 This implementation tries to be compatible with [Rob Napier's Objective-C implementation of RNCryptor](https://github.com/RNCryptor/RNCryptor), It supports schema version 3.

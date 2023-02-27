@@ -1,12 +1,20 @@
 (function () {
+  const crypto = require('crypto');
+  const fs = require('fs');
   const expect = require('chai').expect;
   const RNCryptor = require('../index');
 
+  const specs = require('./spec');
+  require('./title');
+
+  const getSha1Sum = function (file) {
+    const hashSum = crypto.createHash('sha1');
+    hashSum.update(file);
+    return hashSum.digest('hex');
+  };
+
   const password = 'סיסמא';
   const plain_text = 'Some plain text';
-
-  const specs = require('./spec');
-  const _ = require('./title');
 
   describe('RNCryptor: Supported version', function () {
     it('Decrypt encrypted text for version 3, expect be the same than plain text', function () {
@@ -14,6 +22,14 @@
       const decrypted = RNCryptor.Decrypt(encrypted, password);
 
       expect(plain_text).to.equal(decrypted.toString());
+    });
+
+    it('Decrypt encrypted image for version 3, expect be the same than plain text', function () {
+      const image = fs.readFileSync('test/fixtures/Octocat.png');
+      const encrypted = RNCryptor.Encrypt(image, password);
+      const decrypted = RNCryptor.Decrypt(encrypted, password);
+
+      expect(getSha1Sum(image)).to.equal(getSha1Sum(decrypted));
     });
   });
 
